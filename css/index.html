@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            height: 400px;
+            background-color: goldenrod;
+            position: relative;
+        }
+
+        #rel{
+            width: 100px;
+            height: 50px;
+            background-color: orange;
+            position: fixed;
+            right: 10px;
+            top: 20px;
+        }
+        #abs{
+            width: 100px;
+            height: 50px;
+            background-color: tomato;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="rel">fixed</div>
+        <div id="abs">abs</div>
+    </div>
+</body>
+</html>

@@ -1,24 +1,38 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import Demo from './app/demo/Demo';
-import TextStyling from './app/demo/TextStyling';
-import IconStyles from './app/demo/IconStyles';
-
-
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import Demo from "./app/demo/Demo";
+import TextStyling from "./app/demo/TextStyling";
+import IconStyles from "./app/demo/IconStyles";
+import AppButton from "./app/demo/AppButton";
+import Card from "./app/demo/Card";
 
 function App() {
   // return <WelcomeScreen />;
   // return <ViewImageScreen />;
   // return <Demo />;
-  return <TextStyling />
+  // return <TextStyling />
   // return <IconStyles />
+  return (
+    // <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+    //     {/* <AppButton title="Login" onPress={() => console.log("Button Tapped")}/> */}
+
+    //     <Card  title="Pie Chart" subTitle="Metics" imageSource={require("./app/assets/jacket.jpg")}/>
+    // </View>
+    <View style={{ backgroundColor: "#f8f4f4", padding:20, paddingTop: 100 }}>
+      <Card
+        title="Pie Chart"
+        subTitle="Metics"
+        imageSource={require("./app/assets/jacket.jpg")}
+      />
+    </View>
+  );
 }
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
 // import React, { useState } from "react";
 // import {

@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import AppText from './AppText'
 import colors from '../config/colors'
 
 
-const Card = ({title, subTitle, image}) => {
+const Card = ({title, subTitle, imageSource}) => {
   return (
     <View style={styles.card}>
-      <Image style={styles.image} source={image}/>
+      <Image style={styles.image} source={imageSource}/>
       <View style={styles.detailsContainer}>
          <AppText style={styles.title}> {title} </AppText>
          <AppText style={styles.subTitle}> {subTitle} </AppText>
@@ -33,6 +33,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold"
     },
     title: {
-        margin: 7
-    }
+        margin: 7,
+        // color: colors.primary
+    },
+    image: {
+      width: "100%",
+      height: 200,
+    },
 })

@@ -1,14 +1,101 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight } from 'react-native'
 import React from 'react'
+import AppText from './AppText'
+import { GestureHandlerRootView, Swipeable } from 'react-native-gesture-handler'
+import colors from '../config/colors'
 
-const ListItem = () => {
+function ListItem({
+  title,
+  subTitle,
+  image,
+  IconComponent,
+  onPress,
+  renderRightActions,
+}) {
   return (
-    <View>
-      <Text>ListItem</Text>
-    </View>
-  )
+    <GestureHandlerRootView>
+    <Swipeable renderRightActions={renderRightActions}>
+      <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+        <View style={styles.container}>
+          {IconComponent}
+          {image && <Image style={styles.image} source={image} />}
+          <View style={styles.detailsContainer}>
+            <AppText style={styles.title}>{title}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+          </View>
+        </View>
+      </TouchableHighlight>
+    </Swipeable>
+    </GestureHandlerRootView>
+  );
 }
 
-export default ListItem
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    padding: 15,
+    backgroundColor: colors.white,
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: "center",
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  subTitle: {
+    color: colors.medium,
+  },
+  title: {
+    fontWeight: "500",
+  },
+});
 
-const styles = StyleSheet.create({})
+export default ListItem;
+
+
+
+
+// const ListItem = ({title, subTitle, image, IconComponent, onPress, renderRightActions}) => {
+//   return (
+//     <Swipeable renderRightActions={renderRightActions}>
+//       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+//         <View style={styles.container}>
+//           {IconComponent}
+//           {image && <Image style={styles.image} source={image} />}
+//           <View style={styles.detailsContainer}>
+//             <AppText style={styles.title}> {title} </AppText>
+//             {subTitle && <AppText style={styles.subtitle}> {subTitle} </AppText>}
+//           </View>
+//         </View>
+//       </TouchableHighlight>
+//     </Swipeable>
+//   )
+// }
+
+// export default ListItem
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flexDirection: "row",
+//     padding: 15,
+//     backgroundColor: colors.white
+//   },
+//   detailsContainer: {
+//     marginLeft: 10,
+//     justifyContent: "center"
+//   },
+//   image: {
+//     width: 70,
+//     height: 70,
+//     borderRadius: 35
+//   },
+//   subTitle: {
+//     color: colors.medium
+//   },
+//   title: {
+//     fontWeight: "500"
+//   }
+// })
